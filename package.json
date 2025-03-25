@@ -1,6 +1,6 @@
 {
   "name": "@mojsoski/ormm",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple ORM for PostgreSQL",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
