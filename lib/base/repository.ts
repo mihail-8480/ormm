@@ -78,8 +78,8 @@ export abstract class ModelRepository<Table extends string, T extends IModel> {
         this.SQL`SELECT * FROM `
           .append(createIdentifier(this.tableName))
           .append(createWhereFilter(where, this.SQL))
-          .append(createPaginationFilter(pagination, this.SQL))
           .append(createOrderFilter(order, this.SQL))
+          .append(createPaginationFilter(pagination, this.SQL))
       )
     );
     return rows;
