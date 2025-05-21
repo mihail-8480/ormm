@@ -9,7 +9,7 @@ export interface IClient {
 
 export interface IDatabaseService {
   SQL: typeof SQL;
-  client: IClient;
+  get client(): IClient;
   debugQuery?: (q: SQLStatement) => SQLStatement;
 }
 
@@ -17,5 +17,11 @@ export function createDatabaseService(
   client: IClient,
   debugQuery?: (q: SQLStatement) => SQLStatement
 ): IDatabaseService {
-  return { client, SQL, debugQuery };
+  return {
+    get client() {
+      return client;
+    },
+    SQL,
+    debugQuery,
+  };
 }
